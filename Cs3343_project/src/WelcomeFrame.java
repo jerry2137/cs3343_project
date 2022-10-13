@@ -2,19 +2,17 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
  
-class TestFrame extends JFrame implements ActionListener {
+class WelcomeFrame extends JFrame implements ActionListener {
 
     // Components of the Form
     private Container c;
     private JLabel title;
-    private JLabel name;
-    private JTextField tname;
     private JButton start;
  
     // constructor, to initialize the components
     // with default values.
-    public TestFrame() {
-        setTitle("Welcome Page");
+    public WelcomeFrame() {
+        setTitle("Welcome");
         setBounds(300, 90, 900, 600);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
@@ -23,15 +21,15 @@ class TestFrame extends JFrame implements ActionListener {
         c.setLayout(null);
  
         title = new JLabel("Welcome");
-        title.setFont(new Font("Arial", Font.PLAIN, 30));
-        title.setSize(300, 30);
-        title.setLocation(300, 30);
+        title.setFont(new Font("Arial", Font.PLAIN, 50));
+        title.setSize(300, 100);
+        title.setLocation(300, 100);
         c.add(title);
  
         start = new JButton("Start");
-        start.setFont(new Font("Arial", Font.PLAIN, 15));
-        start.setSize(100, 20);
-        start.setLocation(270, 450);
+        start.setFont(new Font("Arial", Font.PLAIN, 30));
+        start.setSize(200, 50);
+        start.setLocation(300, 300);
         start.addActionListener(this);
         c.add(start); 
         
@@ -43,9 +41,7 @@ class TestFrame extends JFrame implements ActionListener {
     // by the user and act accordingly
     @Override
     public void actionPerformed(ActionEvent e) {
-    	if (e.getSource() == start) {
-    		SelectionFrame f = new SelectionFrame();
-            this.dispose();
-        }
+    	SelectionFrame f = new SelectionFrame();
+        this.dispose();
     }
 }
